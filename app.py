@@ -14,7 +14,7 @@ headers = {
 
 
 
-st.title("🎨 Générateur de Styles de Maison avec Stable Diffusion ControlNet")
+st.title("🎨 Générateur de Styles pour vos rendus extérieur et intérieur")
 
 # Interface de chargement d'image
 uploaded_file = st.file_uploader("📤 Téléchargez une image", type=["jpg", "png", "jpeg"])
