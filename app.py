@@ -15,7 +15,14 @@ headers = {
 
 
 st.title("🎨 Générateur de Styles pour vos rendus extérieur et intérieur")
-
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Interface de chargement d'image
 uploaded_file = st.file_uploader("📤 Téléchargez une image", type=["jpg", "png", "jpeg"])
 style_choice = st.selectbox("🎭 Choisissez un style", ["Moderne", "Méditerrannéen", "Moderne Tropicale"])
