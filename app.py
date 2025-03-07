@@ -35,8 +35,6 @@ if uploaded_file:
             files = {"file": ("image.png", img_bytes, "image/png")}
             data = {"style": style_choice}
             response = requests.post(API_URL, headers=headers, files=files, data=data)
-            st.write(response.status_code)
-            st.write(response)
 
 
             if response.status_code == 200:
