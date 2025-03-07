@@ -4,7 +4,7 @@ import io
 from PIL import Image
 
 # URL de ton API déployée sur RunPod
-API_URL = "https://ton-endpoint.runpod.io/generate"  # Remplace par ton URL RunPod
+API_URL = st.secrets["api_url"]
 
 st.title("🎨 Générateur de Styles de Maison avec Stable Diffusion ControlNet")
 
