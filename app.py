@@ -14,7 +14,7 @@ style_choice = st.selectbox("🎭 Choisissez un style", ["Moderne", "Méditerran
 
 if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Image originale", use_column_width=True)
+    st.image(image, caption="Image originale", use_container_width=True)
 
     if st.button("✨ Générer le style"):
         with st.spinner("Génération en cours... ⏳"):
@@ -31,7 +31,7 @@ if uploaded_file:
             if response.status_code == 200:
                 # Charger l'image générée
                 output_image = Image.open(io.BytesIO(response.content))
-                st.image(output_image, caption=f"Style : {style_choice}", use_column_width=True)
+                st.image(output_image, caption=f"Style : {style_choice}", use_container_width=True)
 
                 # Ajouter un bouton de téléchargement
                 st.download_button(
