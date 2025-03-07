@@ -5,6 +5,14 @@ from PIL import Image
 
 # URL de ton API déployée sur RunPod
 API_URL = st.secrets["api_url"]
+API_key = st.secrets["api_key"]
+
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {API_key}'
+}
+
+
 
 st.title("🎨 Générateur de Styles de Maison avec Stable Diffusion ControlNet")
 
@@ -26,7 +34,7 @@ if uploaded_file:
             # Envoyer l'image et le style à l'API RunPod
             files = {"file": ("image.png", img_bytes, "image/png")}
             data = {"style": style_choice}
-            response = requests.post(API_URL, files=files, data=data)
+            response = requests.post(API_URL, headers=headers, files=files, data=data)
 
             if response.status_code == 200:
                 # Charger l'image générée
